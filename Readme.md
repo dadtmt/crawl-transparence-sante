@@ -33,5 +33,6 @@ When the captcha is needed you will see this message
 
 ```sh
 Captcha found ! Check captcha.png and create a cap.txt file containing the captcha.
-``
+```
+
 Open the captcha.png file and type the captcha in a cap.txt file
