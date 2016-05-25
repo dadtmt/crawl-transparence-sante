@@ -3,49 +3,35 @@
 ## Running Locally
 
 Make sure you have [Node.js](http://nodejs.org/) installed.
+
 Make sure you have [PhantomJS](http://phantomjs.org/) installed.
+
 Make sure you have [CasperJS](http://casperjs.org/) installed.
 
+Before typing the following command make sure there is no cap.txt file in the folder
+
 ```sh
-git clone git@github.com:dadtmt/crawl-transparence-sante.git
-cd crawl-transparence-sante
 casperjs crawl.js
-```
+``
 
-Your app should now be running on [localhost:1337](http://localhost:1337/).
+## Usage
 
-## Principles
+### Filling the search form
 
-### Creator role
+Search for the casper.start method and modify the following :
 
-A creator creates a story.
+```js
+this.fill('form#form',{
+  'form:codePostalEntreprise' : '51100',
+  'form:villeEntreprise': 'REIMS'
+},false);
+``
 
-A story is made of pages.
+### Provide captcha in a text file
 
-A page contains many solutions.
+When the captcha is needed you will see this message
 
-Each solution leads to a target page.
-
-### Player role
-
-A player plays a story.
-
-He gets the first page and then click on a solution that will display the target page.
-
-When a player asks for a page or click a solution, the page may not exist or the solution may not have a target page. In this case the StoryHandler class will serve the page when the creator will create the page or link a target page to the solution.
-
-## What is working
-
-- Story creation with pages and solutions
-- Playing to story
-
-## Issues to fix in near future
-
-- StoryController should not instantiate story, page or solution => make factories used in StoryHandler
-- Write proper tests in StoryHandler and indexController (find a test framework)
-- indexCreated should be named id (indexCreated wtf)
-
-## Next tasks
-
-- Show to the story creator the players actions
-- MongoDb
+```sh
+Captcha found ! Check captcha.png and create a cap.txt file containing the captcha.
+``
+Open the captcha.png file and type the captcha in a cap.txt file
