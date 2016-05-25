@@ -12,7 +12,7 @@ Before typing the following command make sure there is no cap.txt file in the fo
 
 ```sh
 casperjs crawl.js
-``
+```
 
 ## Usage
 
@@ -25,7 +25,7 @@ this.fill('form#form',{
   'form:codePostalEntreprise' : '51100',
   'form:villeEntreprise': 'REIMS'
 },false);
-``
+```
 
 ### Provide captcha in a text file
 
